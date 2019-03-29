@@ -15,12 +15,12 @@ var a = process.argv.slice(3).join(" ");
 if (main === "movie-this"){
 
     var axios = require("axios");
-
+    
         
     // use FS to append var a then readout data to have a full string for mult word titles
     
     // Then run a request with axios to the OMDB API with the movie specified
-    axios.get("http://www.omdbapi.com/?t=" + a + "&y=&plot=short&apikey=trilogy").then(
+    axios.get("http://www.omdbapi.com/?t=" + (a || "Mr Nobody") + "&y=&plot=short&apikey=trilogy").then(
       function(response) {
         
      //   console.log(JSON.stringify(response.data, null, 2));
@@ -45,17 +45,20 @@ else if(main === "concert-this"){
     // use FS to append var a then readout data to have a full string for mult word titles
     
     // Then run a request with axios to the OMDB API with the movie specified
-    axios.get("https://rest.bandsintown.com/artists/" + a + "/events?app_id=codingbootcamp").then(
+    axios.get("https://rest.bandsintown.com/artists/" + (a || "Five Finger Death Punch") + "/events?app_id=codingbootcamp").then(
       function(response) {    
 
+                
         for(i=0;i < 5; i++){
+        console.log(response.data[i].lineup[0])    
         console.log(response.data[i].venue.name)
         console.log(response.data[i].venue.city + ", " + response.data[i].venue.region + " " + response.data[i].venue.country )
         var t = moment(response.data[i].datetime).format('MMMM Do YYYY, h:mm:ss a')
         console.log(t)
-       // console.log(response.data[i].datetime)
+        
+       console.log("")
         }
-
+      //  console.log(response.data)
       }
     )
 }
@@ -67,7 +70,7 @@ else if(main === "spotify-this-song"){
     var spotify = new Spotify(keys.spotify);
     
      
-    spotify.search({ type: 'track', query: a, limit: 1 }, function(err, data) {
+    spotify.search({ type: 'track', query: (a || "The Sign"), limit: 5 }, function(err, data) {
       if (err) {
         return console.log('Error occurred: ' + err);
       }
@@ -102,13 +105,7 @@ else if(main === "do-what-it-says"){
 
             console.log(main)
             console.log(a)
-
-        
-          // We will then re-display the content as an array for later use.
-          //console.log(dataArr);
         
         });
-
-
 
 }
