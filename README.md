@@ -22,7 +22,7 @@ There are 4 commands that Liri-node-app uses:
 
 Example:
 
-(assets/example.png)
+[example](assets/example.png)
 
  
 
