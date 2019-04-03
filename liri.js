@@ -72,6 +72,7 @@ function movie(a) {
       function(response) {
         
      //   console.log(JSON.stringify(response.data, null, 2));
+        console.log(" ")
         console.log(response.data.Title + " was released on: " + response.data.Released);
         console.log("IMDB Rating of the movie " + response.data.Ratings[0].Value);
         console.log("Rotten Tomatoes Rating " + response.data.Ratings[1].Value);
@@ -79,6 +80,7 @@ function movie(a) {
         console.log("The plot of " + response.data.Title + " is: " + response.data.Plot);
         console.log("The main actors in " + response.data.Title + " are " + response.data.Actors);
       //  console.log("was released on: " + response.data.Released);
+        console.log(" ")
       }
     );
 
@@ -122,11 +124,13 @@ function movie(a) {
         return console.log('Error occurred: ' + err);
       }
      
+      console.log(" ")
       console.log(data.tracks.items[0].album.artists[0].name)
       console.log(data.tracks.items[0].name)
       console.log(data.tracks.items[0].external_urls.spotify)
       console.log(data.tracks.items[0].album.name);
    // console.log(JSON.stringify(data.tracks.items.artists, null, 2));
+      console.log(" ")
 
     });
 
