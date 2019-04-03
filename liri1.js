@@ -15,54 +15,7 @@ var dataArr = []
 
 if (main === "movie-this"){
 
-  movie(a)
-}
-
-else if(main === "concert-this"){
-    concert(a)
-}
-
-else if(main === "spotify-this-song"){
-  songs(a)
-    
-}
-
-else if(main === "do-what-it-says"){
-    var fs = require("fs");
-
-    fs.readFile("random.txt", "utf8", function(error, data) {
-
-        if (error) {
-            return console.log(error);
-          }
-        
-        dataArr = data.split(",");
-
-            
-        //  console.log(dataArr)
-          main = dataArr[0];
-            a = dataArr[1];
-           if (main === "movie-this"){
-
-              movie(a)
-            }
-            else if(main === "concert-this"){
-              concert(a)
-          }
-
-          else if(main === "spotify-this-song"){
-            songs(a)
-              
-          }
-      
-        
-        });
-
-}
-
-function movie(a) {
-  
-  var axios = require("axios");
+    var axios = require("axios");
     
         
     // use FS to append var a then readout data to have a full string for mult word titles
@@ -82,9 +35,10 @@ function movie(a) {
       }
     );
 
-    }  
 
-    function concert(a){
+}
+
+else if(main === "concert-this"){
     var axios = require("axios");
   //  artist= "Pink"
 
@@ -108,9 +62,9 @@ function movie(a) {
       //  console.log(response.data)
       }
     )
-    }
+}
 
-    function songs(a){
+else if(main === "spotify-this-song"){
 
     var Spotify = require('node-spotify-api');
  
@@ -130,6 +84,37 @@ function movie(a) {
 
     });
 
-  }
+}
 
+else if(main === "do-what-it-says"){
+    var fs = require("fs");
 
+    fs.readFile("random.txt", "utf8", function(error, data) {
+
+        if (error) {
+            return console.log(error);
+          }
+        
+          // We will then print the contents of data
+         // console.log(data);
+        
+          // Then split it by commas (to make it more readable)
+          dataArr = data.split(",");
+
+            
+          console.log(dataArr)
+            
+
+            return dataArr
+        
+        });
+
+        console.log("???" + dataArr)
+
+}
+
+            main = dataArr[0];
+            a = dataArr[1];
+
+            console.log("line 115" + main)
+            console.log(a)
