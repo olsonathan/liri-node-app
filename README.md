@@ -8,19 +8,19 @@ There are 4 commands that Liri-node-app uses:
 
 	This command will find the next 5 concert apperances of the 	artist that the user selects.
 
-[concert-this example](https://github.com/olsonathan/liri-node-app/blob/master/assets/bands.PNG)
+![concert-this example](https://github.com/olsonathan/liri-node-app/blob/master/assets/bands.PNG)
 
 2) node liri.js spotify-this-song '<song name here>'
 
 	This command will return information about the song that the 	user inputs.
 
-[spotify-this-song example](https://github.com/olsonathan/liri-node-app/blob/master/assets/example1.PNG)
+![spotify-this-song example](https://github.com/olsonathan/liri-node-app/blob/master/assets/example1.PNG)
 
 3) node liri.js movie-this '<movie name here>'
 
 	This command will return information about the movie that 	the user inputs.
 
-[movie-this example](https://github.com/olsonathan/liri-node-app/blob/master/assets/OMDB.PNG)
+![movie-this example](https://github.com/olsonathan/liri-node-app/blob/master/assets/OMDB.PNG)
 
 
 4) node liri.js do-what-it-says
